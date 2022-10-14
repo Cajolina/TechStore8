@@ -12,6 +12,7 @@ function loadProducts() {
     });
 }
 
+initSite();
 
 function initSite() {
     loadProducts();
@@ -29,3 +30,4 @@ function addProductsToWebpage() {
     
     // TODO: Remove the console.log and these comments when you've read them.
 }
+
