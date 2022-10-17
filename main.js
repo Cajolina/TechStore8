@@ -21,6 +21,18 @@ function initSite() {
 
 /** Uses the loaded products data to create a visible product list on the website */
 function addProductsToWebpage() {
+    let html;
+    for (const product of listOfProducts) {
+        // ${} så skriver man JS i HTML i JS.
+        html = `
+        <div class="product_container">
+        <h2>${product.title}</h2>
+        <p>${product.description}</p>
+        <img src="/assets/${product.image}">
+        <p>${product.price} kr</p>
+        </div>
+        `
+    }
     // Check your console to see that the products are stored in the listOfProducts varible.
     console.log(listOfProducts);
 
