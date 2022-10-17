@@ -31,7 +31,9 @@ function addProductsToWebpage() {
         <img src="/assets/${product.image}">
         <p>${product.price} kr</p>
         </div>
-        `
+        `;
+
+        main.insertAdjacentHTML("afterbegin", html);
     }
     // Check your console to see that the products are stored in the listOfProducts varible.
     console.log(listOfProducts);
