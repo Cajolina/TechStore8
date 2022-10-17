@@ -22,18 +22,25 @@ function initSite() {
 /** Uses the loaded products data to create a visible product list on the website */
 function addProductsToWebpage() {
     let html;
+    //Börja ränka på 0
+    let id =0;
     for (const product of listOfProducts) {
         // ${} så skriver man JS i HTML i JS.
+        //vi gör detta till en sträng, vi kan även creata element så som vi gjort förut. Nu måste vi dock göra lite fix för att knappen ska kopplas till de olika produkterna (annars hade vi lagt en eventListener)
         html = `
         <div class="product_container">
-        <h2>${product.title}</h2>
-        <p>${product.description}</p>
-        <img src="/assets/${product.image}">
-        <p>${product.price} kr</p>
+            <h2>${product.title}</h2>
+            <p>${product.description}</p>
+            <img src="/assets/${product.image}">
+            <button id=${id} onclick="test (this)">Add to cart</button>
+            <p>${product.price} kr</p>
         </div>
         `;
 
-        main.insertAdjacentHTML("afterbegin", html);
+        //Öka med 1 när vi ränkar
+        id++;
+        //Här skickar vi in det i mainen
+        main.insertAdjacentHTML("beforeEnd", html);
     }
     // Check your console to see that the products are stored in the listOfProducts varible.
     console.log(listOfProducts);
@@ -43,5 +50,10 @@ function addProductsToWebpage() {
     // an explainetory comment like the one for this function, see row 22.
     
     // TODO: Remove the console.log and these comments when you've read them.
+}
+
+function test(e) {
+    const product = listOfProducts[e.id];
+    console.log(product);
 }
 
