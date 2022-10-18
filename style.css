@@ -14,13 +14,14 @@ header {
     position: fixed;
     display: flex;
     justify-content: space-between;
+    font-family: Helvetica, sans-serif;  /* Kolla om vi kan hitta en mer matchie font */
 }
 
 header h1 {
-    padding-top: 1.5rem;
+    padding-top: 1.25rem;
     padding-left: 2rem;
-    font-family: Helvetica, sans-serif; /* Kolla om vi kan hitta en mer matchie font */
-    font-size: 1.8rem;
+  
+    font-size: 2.5rem;
 }
 
 header a:visited {
@@ -32,9 +33,20 @@ header a {
 }
 
 header i {
-    padding-top: 1.7rem;
+    /*padding-top: 1.7rem;
     padding-right: 2rem;
-    font-size: 1.45rem;
+    font-size: 2.5rem;*/
+}
+
+.rightContent {
+    display: flex;
+    padding-top: 1.25rem;
+    padding-right: 2rem;
+    font-size: 2.5rem;
+}
+
+.rightContent p {
+    padding-right: 1rem;
 }
 
 /* MAIN CSS */
@@ -44,8 +56,9 @@ main {
    
 }
 
-.product_container {
-    
+
+.product_container h2 {
+    background-color: aquamarine;
 }
 
 
