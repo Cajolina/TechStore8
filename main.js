@@ -1,5 +1,6 @@
 var listOfProducts;
 const main = document.querySelector("main");
+const cartNr = document.querySelector(".shoppingCount");
 
 /** Get products from the json file and store it in a gobal variable */
 function loadProducts() {
@@ -13,7 +14,10 @@ function loadProducts() {
     });
 }
 
+
 initSite();
+
+
 
 function initSite() {
     loadProducts();
@@ -33,7 +37,7 @@ function addProductsToWebpage() {
             <h2>${product.title}</h2>
             <p>${product.description}</p>
             <img src="/assets/${product.image}">
-            <button id=${id} onclick="test (this)">Add to cart</button>
+            <button id=${id} onclick="addToCart (this)">Add to cart</button>
             <p>${product.price} kr</p>
         </div>
         `;
@@ -53,10 +57,34 @@ function addProductsToWebpage() {
     // TODO: Remove the console.log and these comments when you've read them.
 }
 
-function test(e) {
-    const product = listOfProducts[e.id];
-    const boughtProduct = [];
-    
-    console.log(product);
+function addToCart(button) {
+    const product = listOfProducts[button.id];
+    //button.setAttribute("disabled", true)
+    button.style.visibility = "hidden";
+    if(!localStorage.getItem("shoppingcart")){
+        localStorage.setItem("shoppingcart", JSON.stringify([product]));
+    }
+    else {
+       const shoppingcart = JSON.parse(localStorage.getItem("shoppingcart"));
+        shoppingcart.push(product);
+        localStorage.setItem("shoppingcart", JSON.stringify (shoppingcart));
+    }
+   //countlenght();
+/*
+    function cartbutton () {
+        shoppingcart = JSON.parse(localStorage.getItem("shoppingcart"))
+        for (let x of product) {
+            localStorage.setItem("shoppingcart", x.product);
+        }
+       
+        
+    }*/
+
+    /*function countlenght () {
+    const countLength = shoppingcart.length;
+    console.log("hej", countLength)
+    console.log(product);*/
 }
+     
+
 
