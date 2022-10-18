@@ -55,6 +55,8 @@ function addProductsToWebpage() {
 
 function test(e) {
     const product = listOfProducts[e.id];
+    const boughtProduct = [];
+    
     console.log(product);
 }
 
