@@ -38,7 +38,7 @@ function addProductsToWebpage() {
         </div>
         `;
 
-        //Öka med 1 när vi ränkar
+        //Öka med 1 när vi räknar
         id++;
         //Här skickar vi in det i mainen
         main.insertAdjacentHTML("beforeEnd", html);
