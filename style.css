@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    width: 100%;
+}
+
 /*HEADER STUFF */
 
 header {
@@ -52,16 +56,25 @@ header i {
 
 main {
     width: 100%;
-   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
 }
 
+.product_container, img {
+    /*display: flex;
+    flex-direction: column;*/
+    justify-content: center;
+    width: 50%;
+}
 
 .product_container h2 {
     background-color: aquamarine;
 }
 
 
-
+    
 /* FOOTER CSS */
 
 footer {
