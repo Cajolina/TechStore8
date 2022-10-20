@@ -20,7 +20,6 @@ initSite();
 
 
 function initSite() {
-    getStorage();
     loadProducts();
     // This would also be a good place to initialize other parts of the UI
 }
@@ -33,12 +32,11 @@ function addProductsToWebpage() {
     for (const product of listOfProducts) {
         // ${} så skriver man JS i HTML i JS.
         //vi gör detta till en sträng, vi kan även creata element så som vi gjort förut. Nu måste vi dock göra lite fix för att knappen ska kopplas till de olika produkterna (annars hade vi lagt en eventListener)
-        let imageId = product.image.slice(0, -4);
         html = `
         <div class="product_container">
             <h2>${product.title}</h2>
             <p>${product.description}</p>
-            <img src="/assets/${product.image}" id="${imageId}">
+            <img src="/assets/${product.image}">
             <p>${product.price} kr</p>
             <button id=${id} onclick="addToCart (this)">Add to cart</button>
         </div>
