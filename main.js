@@ -32,11 +32,12 @@ function addProductsToWebpage() {
     for (const product of listOfProducts) {
         // ${} så skriver man JS i HTML i JS.
         //vi gör detta till en sträng, vi kan även creata element så som vi gjort förut. Nu måste vi dock göra lite fix för att knappen ska kopplas till de olika produkterna (annars hade vi lagt en eventListener)
+        let imageId = product.image.slice(0, -4);
         html = `
         <div class="product_container">
             <h2>${product.title}</h2>
             <p>${product.description}</p>
-            <img src="/assets/${product.image}">
+            <img src="/assets/${product.image}" id=${imageId}>
             <p>${product.price} kr</p>
             <button id=${id} onclick="addToCart (this)">Add to cart</button>
         </div>
