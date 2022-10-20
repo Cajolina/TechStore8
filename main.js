@@ -39,8 +39,8 @@ function addProductsToWebpage() {
             <h2>${product.title}</h2>
             <p>${product.description}</p>
             <img src="/assets/${product.image}" id="${imageId}">
-            <button id=${id} onclick="addToCart (this)">Add to cart</button>
             <p>${product.price} kr</p>
+            <button id=${id} onclick="addToCart (this)">Add to cart</button>
         </div>
         `;
 
