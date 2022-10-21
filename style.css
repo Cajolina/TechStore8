@@ -64,39 +64,47 @@ main {
 
 }
 
-
-
-
-.product_container, img {
-    
-    justify-content: center;
-    height: 75%;
-}
-
 .product_container {
-    height: 100vh;
-    padding-top: 10rem;
+    
+    padding: 10rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+.product_container img {
+    
+    justify-content: center;
+    height: 35rem;
+}
 .product_container h2 {
+    padding-top: 4.5rem;
     padding-bottom: 2rem;
-   font-size: 3rem;
+   font-size: 5rem;
 }
 
 .product_container p {
-    font-weight: 900;
+    font-weight: 800;
+    font-size: 1.5rem;
+    padding-bottom: 2rem;
+
 }
 
 button {
     background-color: #6397ED;
     color: white;
     border: none;
+    padding: 20px 40px;
+    font-size: 1.7rem;
+    font-weight: 400;
+    border-radius: 12px;
 }
 
+.product_container i {
+   padding-right: 1rem;
+   font-size: 2rem;
+}
 
     
 /* FOOTER CSS */
