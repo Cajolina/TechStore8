@@ -64,11 +64,13 @@ main {
 
 }
 
+
+
+
 .product_container, img {
-    /*display: flex;
-    flex-direction: column;*/
+    
     justify-content: center;
-    width: 50%;
+    height: 75%;
 }
 
 .product_container {
@@ -88,6 +90,13 @@ main {
 .product_container p {
     font-weight: 900;
 }
+
+button {
+    background-color: #6397ED;
+    color: white;
+    border: none;
+}
+
 
     
 /* FOOTER CSS */

@@ -39,7 +39,7 @@ function addProductsToWebpage() {
             <p>${product.description}</p>
             <img src="/assets/${product.image}" id=${imageId}>
             <p>${product.price} kr</p>
-            <button id=${id} onclick="addToCart (this)">Add to cart</button>
+            <button id=${id} onclick="addToCart (this)"><i class="fa-solid fa-cart-arrow-down"></i> Lägg till i kundvagnen</button>
         </div>
         `;
 
