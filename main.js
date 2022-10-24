@@ -92,8 +92,10 @@ function addToCart(button) {
 
 function getStorage() {
     const horse = JSON.parse(localStorage.getItem("shoppingcart"));
+    if (localStorage.getItem("shoppingcart")) {
     const numberOfItems = horse.length;
     cartNr.innerText = numberOfItems;
+    }
 }
 
      

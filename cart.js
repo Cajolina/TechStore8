@@ -1,6 +1,7 @@
 //var listOfProducts;
 const productContainer = document.createElement("div");
 const mainCart = document.querySelector("main");
+const cartNr = document.querySelector(".shoppingCount");
 
 
 mainCart.appendChild(productContainer)
@@ -10,8 +11,8 @@ mainCart.appendChild(productContainer)
 initSite()
 
 function initSite() {
-    
-   addProductsToWebpage()
+    getStorage();
+   addProductsToWebpage();
 }
 
 function addProductsToWebpage() {
@@ -45,9 +46,13 @@ mainCart.insertAdjacentHTML("afterbegin", imageCart);
 }
 }
 
-console.log(productContainer)
-
-
+function getStorage() {
+   const horse = JSON.parse(localStorage.getItem("shoppingcart"));
+   if (localStorage.getItem("shoppingcart")) {
+   const numberOfItems = horse.length;
+   cartNr.innerText = numberOfItems;
+   }
+}
 
 
 
