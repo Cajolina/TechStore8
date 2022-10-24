@@ -87,33 +87,7 @@ function addToCart(button) {
         shoppingcart.push(product);
         localStorage.setItem("shoppingcart", JSON.stringify (shoppingcart));
     }
-<<<<<<< HEAD
-
-    /*
-   countlenght();
-    localStorage.getItem("shoppingcart", (shoppingcart))
-    shoppingcart.length = [product];
-*/
-
-
-
-/*
-    function cartbutton () {
-        shoppingcart = JSON.parse(localStorage.getItem("shoppingcart"))
-        for (let x of product) {
-            localStorage.setItem("shoppingcart", x.product);
-        }
-       
-        
-    }*/
-
-    /*function countlenght () {
-    const countLength = shoppingcart.length;
-    console.log("hej", countLength)
-    console.log(product);*/
-=======
     getStorage();
->>>>>>> 6b261b662bfb9bc0c637c753cbe0743802935dd1
 }
 
 function getStorage() {
