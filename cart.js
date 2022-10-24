@@ -7,11 +7,13 @@ productContainer.className = "productContainer";
 mainCart.appendChild(productContainer)
 
 
+
 initSite()
 
 function initSite() {
    getStorage();
    addProductsToWebpage();
+   
 }
 
 function addProductsToWebpage() {
@@ -31,7 +33,9 @@ const price = document.createElement("p")
 price.innerText = productCart.price
 const removeBtn = document.createElement("button")
 removeBtn.innerText = "Ta bort"
-const removeIcon = document.createElement("i")
+
+//const removeIcon = document.createElement("i")
+//removeIcon.innerText = 
 
 
 productDiv.appendChild(imageCart)
@@ -39,6 +43,11 @@ productDiv.appendChild(title)
 productDiv.appendChild(price)
 productDiv.appendChild(removeBtn)
 productContainer.appendChild(productDiv)
+//removeBtn.appendChild(removeIcon)
+
+/*
+removeBtn.addEventListener("click", remove);
+*/
 }
 }
 
@@ -50,6 +59,15 @@ function getStorage() {
    }
 }
 
+/*
+const empty = [button.id];
+
+loop x
+
+function remove () {
+   localStorage.removeItem("empty");
+}
+*/
 
 
 
