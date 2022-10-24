@@ -2,47 +2,43 @@
 const productContainer = document.createElement("div");
 const mainCart = document.querySelector("main");
 const cartNr = document.querySelector(".shoppingCount");
-
+productContainer.className = "productContainer";
 
 mainCart.appendChild(productContainer)
-
 
 
 initSite()
 
 function initSite() {
-    getStorage();
+   getStorage();
    addProductsToWebpage();
 }
 
 function addProductsToWebpage() {
-const getProducts = JSON.parse(localStorage.getItem("shoppingcart"));
+if (!localStorage.getItem("shoppingcart")) {
+   return
+}
+   const getProducts = JSON.parse(localStorage.getItem("shoppingcart")); 
 
 for (const productCart of getProducts) {
+const productDiv = document.createElement("div")
 
-const title = document.createElement("h2")
-title.innerHTML = productCart.title
-const description = document.createElement("p")
-description.innerHTML = productCart.description
 const imageCart = document.createElement("img")
 imageCart.setAttribute("src", "/assets/" + productCart.image)
+const title = document.createElement("h2")
+title.innerText = productCart.title
 const price = document.createElement("p")
-price.innerHTML = productCart.price
+price.innerText = productCart.price
 const removeBtn = document.createElement("button")
 removeBtn.innerText = "Ta bort"
+const removeIcon = document.createElement("i")
 
 
-productContainer.appendChild(title)
-productContainer.appendChild(description)
-productContainer.appendChild(imageCart)
-
-productContainer.appendChild(price)
-productContainer.appendChild(removeBtn)
-
-
-
-
-mainCart.insertAdjacentHTML("afterbegin", imageCart);
+productDiv.appendChild(imageCart)
+productDiv.appendChild(title)
+productDiv.appendChild(price)
+productDiv.appendChild(removeBtn)
+productContainer.appendChild(productDiv)
 }
 }
 
@@ -53,6 +49,7 @@ function getStorage() {
    cartNr.innerText = numberOfItems;
    }
 }
+
 
 
 
