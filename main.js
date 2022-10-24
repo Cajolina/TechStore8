@@ -21,7 +21,18 @@ initSite();
 
 function initSite() {
     loadProducts();
+    getStorage();
+    // hideBoughtStuff();
     // This would also be a good place to initialize other parts of the UI
+}
+
+function hideBoughtStuff(button) {
+    const product = listOfProducts[button.id];
+    button.style.visibility = "hidden";
+    if (localStorage.getItem("shoppingcart")){
+        /*const what = JSON.parse(localStorage.getItem("shoppingcart"));
+        localStorage.setItem(JSON.stringify (product));*/
+    }
 }
 
 /** Uses the loaded products data to create a visible product list on the website */
@@ -29,16 +40,23 @@ function addProductsToWebpage() {
     let html;
     //Börja ränka på 0
     let id =0;
+    const getItem = JSON.parse(localStorage.getItem("shoppingcart"));
     for (const product of listOfProducts) {
         // ${} så skriver man JS i HTML i JS.
         //vi gör detta till en sträng, vi kan även creata element så som vi gjort förut. Nu måste vi dock göra lite fix för att knappen ska kopplas till de olika produkterna (annars hade vi lagt en eventListener)
+        let foundProduct = false;
+        if (localStorage.getItem("shoppingcart")) {
+        foundProduct = getItem.some(p => p.title === product.title); 
+        }
+
+        let imageId = product.image.slice(0, -4);
         html = `
         <div class="product_container">
             <h2>${product.title}</h2>
             <p>${product.description}</p>
-            <img src="/assets/${product.image}">
-            <button id=${id} onclick="addToCart (this)">Add to cart</button>
+            <img src="/assets/${product.image}" id=${imageId}>
             <p>${product.price} kr</p>
+            ${!foundProduct ? `<button id=${id} onclick="addToCart (this)"><i class="fa-solid fa-cart-arrow-down"></i> Lägg till i kundvagnen</button>` : ""}
         </div>
         `;
 
@@ -69,6 +87,7 @@ function addToCart(button) {
         shoppingcart.push(product);
         localStorage.setItem("shoppingcart", JSON.stringify (shoppingcart));
     }
+<<<<<<< HEAD
 
     /*
    countlenght();
@@ -92,7 +111,17 @@ function addToCart(button) {
     const countLength = shoppingcart.length;
     console.log("hej", countLength)
     console.log(product);*/
+=======
+    getStorage();
+>>>>>>> 6b261b662bfb9bc0c637c753cbe0743802935dd1
 }
+
+function getStorage() {
+    const horse = JSON.parse(localStorage.getItem("shoppingcart"));
+    const numberOfItems = horse.length;
+    cartNr.innerText = numberOfItems;
+}
+
      
 
 
