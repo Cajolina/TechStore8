@@ -69,7 +69,15 @@ function addToCart(button) {
         shoppingcart.push(product);
         localStorage.setItem("shoppingcart", JSON.stringify (shoppingcart));
     }
-   //countlenght();
+
+    /*
+   countlenght();
+    localStorage.getItem("shoppingcart", (shoppingcart))
+    shoppingcart.length = [product];
+*/
+
+
+
 /*
     function cartbutton () {
         shoppingcart = JSON.parse(localStorage.getItem("shoppingcart"))
