@@ -52,6 +52,7 @@ header a {
 main {
     width: 100%;
     display: flex;
+    flex-direction: column;
     /*justify-content: center;
     align-items: center;*/
 
@@ -67,15 +68,16 @@ main {
 }
 
 .productContainer div {
+    background-color: rgb(246, 246, 246);
     display: flex;
     flex-direction: column; 
     align-items: center;
     white-space: nowrap;
     padding: 0.5rem;
     margin: 2rem;
-    border: #577DBB;
+    border: #6795df;
     border-style: solid;
-    border-radius: 0.5rem;
+    border-radius: 0.7rem;
     border-width: 0.2rem;
 }
 
@@ -103,6 +105,16 @@ button {
     font-size: 1.6rem;
     font-weight: 400;
     border-radius: 12px;
+}
+
+.checkout {
+    max-width: 20%;
+    padding: 1rem;
+}
+
+.checkout a:visited {
+    color: rgb(220, 220, 220);
+    text-decoration: none;
 }
 
 .productContainer i {

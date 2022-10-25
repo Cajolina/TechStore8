@@ -59,6 +59,8 @@ main {
 }
 
 .product_container {
+    width: 100%;
+    height: 100vh;
     padding: 5rem;
     display: flex;
     flex-direction: column;
@@ -67,7 +69,7 @@ main {
 }
 
 .product_container:nth-child(odd) {
-    background-color: #6397ED;
+    background-color: rgb(246, 246, 246);
 }
 
 .product_container img {
@@ -136,5 +138,28 @@ footer button {
     padding: 0.2rem 1rem;
     background-color: white;
     margin-top: 0.5rem;
+}
+
+
+.receipt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10rem;
+    color: #363636;
+}
+
+.receipt h2 {
+    font-size: 5rem;
+}
+
+.receipt p {
+    padding-top: 2rem;
+    font-size: 2rem;
+}
+
+.receipt button {
+    margin: 2rem;
 }
 
