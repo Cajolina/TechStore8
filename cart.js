@@ -3,11 +3,13 @@ const productContainer = document.createElement("div");
 const mainCart = document.querySelector("main");
 const cartNr = document.querySelector(".shoppingCount");
 productContainer.className = "productContainer";
+const totalPrice = document.createElement("h3");
 const buy = document.createElement("button");
 buy.innerHTML = `<div class="checkout"><a href="./receipt.html"><p>Slutför ditt köp</p></a></div>`;
   
-mainCart.appendChild(productContainer)
- mainCart.appendChild(buy);
+mainCart.appendChild(productContainer);
+mainCart.appendChild(totalPrice);
+mainCart.appendChild(buy);
 
 
 initSite()
@@ -15,6 +17,7 @@ initSite()
 function initSite() {
    getStorage();
    addProductsToWebpage();
+   printPrice();
 }
 
 function addProductsToWebpage() {
@@ -63,19 +66,6 @@ function getStorage() {
    }
 }
 
-/*totalSum();
-
-function totalSum() {
-   const shoppingArray = JSON.parse(localStorage.getItem("shoppingcart".price));
-   const total = shoppingArray.reduce((currentTotal, number) => currentTotal + number,
-   0
-   );
-   console.log(total);
-   /*const productPrice = shoppingArray.price;
-   return total + num
-   console.log(productPrice)
-}*/
-
 function removeButton (hej) {
    const ponny = JSON.parse(localStorage.getItem("shoppingcart"));
    const index = ponny.findIndex(product=> product.title === hej.title)
@@ -89,6 +79,15 @@ function removeButton (hej) {
    buyButton();
 }
 
+function printPrice() {
+   const shoppingArray = JSON.parse(localStorage.getItem("shoppingcart"));
+   const totalSum = shoppingArray.reduce(
+      (total, item) => {
+         return total + item.price
+      }, 0);
+
+   totalPrice.innerText = "Totalt pris: " + totalSum + " kr";
+}
 
 function buyButton(){
    const hoppla = JSON.parse(localStorage.getItem("shoppingcart"));
