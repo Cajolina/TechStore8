@@ -77,6 +77,7 @@ function removeButton (hej) {
    addProductsToWebpage();
    getStorage();
    buyButton();
+   printPrice();
 }
 
 function printPrice() {
@@ -86,7 +87,7 @@ function printPrice() {
          return total + item.price
       }, 0);
 
-   totalPrice.innerText = "Totalt pris: " + totalSum + " kr";
+      totalPrice.innerText = "Totalt pris: " + totalSum + " kr";
 }
 
 function buyButton(){
