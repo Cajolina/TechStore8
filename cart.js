@@ -6,7 +6,7 @@ productContainer.className = "productContainer";
 const totalPrice = document.createElement("h3");
 const buy = document.createElement("button");
 buy.innerHTML = `<div class="checkout"><a href="./receipt.html"><p>Slutför ditt köp</p></a></div>`;
-  
+
 mainCart.appendChild(productContainer);
 mainCart.appendChild(totalPrice);
 mainCart.appendChild(buy);
