@@ -19,8 +19,8 @@ const createBtn = document.querySelector(".createBtn");
 
 let users = [
     {
-        userName: "",
-        passWord: "",
+        userName: "Fredrik",
+        passWord: "123",
     },
 ]
 

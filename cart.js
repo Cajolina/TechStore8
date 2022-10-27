@@ -103,10 +103,41 @@ function purchaseButton(){
 buy.addEventListener("click", buyBtn);
 
 function buyBtn() {
-   const yiha = JSON.parse(localStorage.getItem("shoppingcart"));
-   localStorage.removeItem("shoppincart");
+   const yihashoppingcart = JSON.parse(localStorage.getItem("shoppingcart"));
+   localStorage.setItem("orders", JSON.stringify(yihashoppingcart));
+   const orders = JSON.parse(localStorage.getItem("orders"));
+   orders.push(yihashoppingcart)
+   const userloggedin = localStorage.getItem("userloggedin");
+   localStorage.setItem(userloggedin, JSON.stringify(yihashoppingcart));
+   userloggedin.push(yihashoppingcart)
 
-}
+   localStorage.removeItem("shoppingcart");
+
+   
+   /*
+for (let x of users) {
+      if(user.value === x.userName && word.value === x.passWord) {
+          
+          localStorage.setItem("userloggedin", x.userName); + orders + orders-price
+  
+          rightuser(); -kvittosida för inloggad
+
+      else { if ingen användare kör functionen - kvittosida för ej inloggad}
+
+
+
+   rightuser() {
+      Fredrik - vem va det som loggade in. - spara den ordern i den användaren. 
+      const låda = x.username + localstorage order. 
+   }*/
+
+   /*const storage = JSON.parse(localStorage.getItem("orders"));
+
+  storage.push([])*/
+} 
+
+//createElement("p")
+//innerText: orders + totalprice + user
 
 /*buy.addEventListener("click", pressbutton);
 localStorage.setItem("orders", "");
