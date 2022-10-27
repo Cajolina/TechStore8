@@ -76,7 +76,7 @@ function removeButton (hej) {
    
    addProductsToWebpage();
    getStorage();
-   buyButton();
+   purchaseButton();
    printPrice();
 }
 
@@ -90,7 +90,7 @@ function printPrice() {
       totalPrice.innerText = "Totalt pris: " + totalSum + " kr";
 }
 
-function buyButton(){
+function purchaseButton(){
    const hoppla = JSON.parse(localStorage.getItem("shoppingcart"));
    const nrOfItems = hoppla.length;
    if (nrOfItems > 0) { 
@@ -105,6 +105,7 @@ buy.addEventListener("click", buyBtn);
 function buyBtn() {
    const yiha = JSON.parse(localStorage.getItem("shoppingcart"));
    localStorage.removeItem("shoppincart");
+
 }
 
 /*buy.addEventListener("click", pressbutton);
