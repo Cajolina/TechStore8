@@ -104,15 +104,30 @@ buy.addEventListener("click", buyBtn);
 
 function buyBtn() {
    const yihashoppingcart = JSON.parse(localStorage.getItem("shoppingcart"));
-   localStorage.setItem("orders", JSON.stringify(yihashoppingcart));
-   const orders = JSON.parse(localStorage.getItem("orders"));
-   orders.push(yihashoppingcart)
-   const userloggedin = localStorage.getItem("userloggedin");
-   localStorage.setItem(userloggedin, JSON.stringify(yihashoppingcart));
-   userloggedin.push(yihashoppingcart)
+   if(localStorage.getItem("ordersLS")) {
+      const orders = JSON.parse(localStorage.getItem("ordersLS"));
+      orders.push(yihashoppingcart)
+      localStorage.setItem("ordersLS", JSON.stringify(orders))
+
+
+   } else {
+      localStorage.setItem("ordersLS", JSON.stringify(yihashoppingcart));
+      const userloggedin = localStorage.getItem("userloggedin");
+      localStorage.setItem(userloggedin, JSON.stringify(yihashoppingcart));
+   }
+   
+   
+   if(localStorage.getItem("userloggedin")) {
+      const userNloggedin = JSON.parse(localStorage.getItem("userloggedin"));
+      localStorage.setItem(userNloggedin,"");
+      const tva = JSON.parse(localStorage.getItem(userNloggedin));
+      tva.push(yihashoppingcart)
+      localStorage.setItem(userNloggedin, JSON.stringify(tva))
+   }
+   
 
    localStorage.removeItem("shoppingcart");
-
+}
    
    /*
 for (let x of users) {
@@ -134,7 +149,7 @@ for (let x of users) {
    /*const storage = JSON.parse(localStorage.getItem("orders"));
 
   storage.push([])*/
-} 
+
 
 //createElement("p")
 //innerText: orders + totalprice + user
