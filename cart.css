@@ -45,6 +45,7 @@ header a {
 
 .rightContent p {
     padding-right: 1rem;
+    padding-left: 1rem;
 }
 
 /* MAIN CSS */
@@ -53,14 +54,16 @@ main {
     width: 100%;
     display: flex;
     flex-direction: column;
-    /*justify-content: center;
-    align-items: center;*/
+    align-items: center;
 
 }
 
 .productContainer {
     display: flex;
     padding: 5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 
    
     /*justify-content: center;
@@ -82,13 +85,13 @@ main {
 }
 
 .productContainer img {
-    height: 15rem;
+    height: 12rem;
 }
 
 .productContainer h2 {
     padding-bottom: 1.0rem;
     font-weight: 600;
-    font-size: 3.4rem;
+    font-size: 2.5rem;
 }
 
 .price p {
