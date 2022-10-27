@@ -22,12 +22,6 @@ header {
     font-family: Helvetica, sans-serif;  /* Kolla om vi kan hitta en mer matchie font */
 }
 
-header h1 {
-    padding-top: 1.25rem;
-    padding-left: 2rem;
-    font-size: 2.5rem;
-}
-
 header a:visited {
     color: white;
 }
@@ -36,9 +30,30 @@ header a {
     text-decoration: none;
 }
 
+.shoplink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shoplink h1 {
+    padding-left: 2rem;
+    padding-right: 4rem;
+    font-size: 2.5rem;
+}
+
+.shoplink p {
+    font-size: 1.6rem;
+    display: none;
+}
+
+.shoplink p:hover {
+    color: #959595;
+}
+
 .rightContent {
     display: flex;
-    padding-top: 1.25rem;
+    align-items: center;
     padding-right: 2rem;
     font-size: 2.5rem;
 }
@@ -55,11 +70,15 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     background-color: rgb(246, 246, 246);
+    padding-top: 8rem;
     /*justify-content: center;
     align-items: center;*/
 
+}
+
+main h2 {
+    font-size: 3rem;
 }
 
 .loginContainer {
@@ -112,7 +131,15 @@ button {
 
 .logout {
     display: none;
+    background-color: #212121;
+    font-size: 1.5rem;
 }
+
+
+.logout:hover{
+    color: #959595;
+}
+
 
 
 /* FOOTER CSS 

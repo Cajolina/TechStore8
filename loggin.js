@@ -13,6 +13,7 @@ const moreusers = document.querySelector(".createContainer");
 const newusername = document.querySelector(".newusername");
 const newuserpassword = document.querySelector(".newuserpassword");
 const createBtn = document.querySelector(".createBtn");
+const shopBtn = document.querySelector(".shoplink p")
 
 
 // Här kommer min information som skall hämtas och är sparad i lådor. Variabler.
@@ -68,9 +69,11 @@ function rightuser() {
     const userloggedin = localStorage.getItem("userloggedin")
     form.style.display = "none";
     moreusers.style.display = "none";
-    headlinemain.innerText = "Välkommen " + userloggedin;
-    paragraphmain.innerText = "Du har lyckats att logga in";
+    headlinemain.innerText = userloggedin + " Orderhistorik";
+    paragraphmain.style.display = "none";
     logoutbutton.style.display = "block";
+    shopBtn.style.display = "block";
+
 }
 
 // Här är kod för nya användare
@@ -110,6 +113,7 @@ function logout() {
     moreusers.style.display = "block";
     form.style.display = "block";
     logoutbutton.style.display = "none";
+    shopBtn.style.display = "none";
     user.value = "";
     word.value = "";
     newusername.value = "";
