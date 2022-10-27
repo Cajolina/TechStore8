@@ -5,6 +5,7 @@ const cartNr = document.querySelector(".shoppingCount");
 productContainer.className = "productContainer";
 const totalPrice = document.createElement("h3");
 const buy = document.createElement("button");
+buy.classList.add("buybutton")
 buy.innerHTML = `<div class="checkout"><a href="./receipt.html"><p>Slutför ditt köp</p></a></div>`;
 
 mainCart.appendChild(productContainer);
@@ -104,6 +105,7 @@ buy.addEventListener("click", buyBtn);
 
 function buyBtn() {
    const yihashoppingcart = JSON.parse(localStorage.getItem("shoppingcart"));
+
    if(localStorage.getItem("ordersLS")) {
       const orders = JSON.parse(localStorage.getItem("ordersLS"));
       orders.push(yihashoppingcart)
@@ -112,18 +114,21 @@ function buyBtn() {
 
    } else {
       localStorage.setItem("ordersLS", JSON.stringify(yihashoppingcart));
+     
+   }
       const userloggedin = localStorage.getItem("userloggedin");
       localStorage.setItem(userloggedin, JSON.stringify(yihashoppingcart));
-   }
+      const tva = JSON.parse(localStorage.getItem(userloggedin));
+      tva.push(yihashoppingcart)
+      localStorage.setItem(userloggedin, JSON.stringify(tva))
    
-   
-   if(localStorage.getItem("userloggedin")) {
+   /*if(localStorage.getItem("userloggedin")) {
       const userNloggedin = JSON.parse(localStorage.getItem("userloggedin"));
       localStorage.setItem(userNloggedin,"");
       const tva = JSON.parse(localStorage.getItem(userNloggedin));
       tva.push(yihashoppingcart)
       localStorage.setItem(userNloggedin, JSON.stringify(tva))
-   }
+   }*/
    
 
    localStorage.removeItem("shoppingcart");

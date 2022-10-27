@@ -97,7 +97,3 @@ function getStorage() {
     cartNr.innerText = numberOfItems;
     }
 }
-
-     
-
-

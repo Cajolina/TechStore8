@@ -5,6 +5,7 @@
 }
 
 body {
+    max-height: 100vh;
     width: 100%;
     font-family: Helvetica, sans-serif;
 }
@@ -51,6 +52,7 @@ header a {
 /* MAIN CSS */
 
 main {
+    max-height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -110,13 +112,21 @@ button {
     border-radius: 12px;
 }
 
-.checkout {
-    max-width: 20%;
+.buybutton {
+    background-color: #6397ED;
+    padding: 1rem 3rem;
+}
+/*.checkout {
+   
     padding: 1rem;
+    background-color: #6397ED;
+}*/
+.buybutton a {
+    text-decoration: none;
 }
 
-.checkout a:visited {
-    color: rgb(220, 220, 220);
+.buybutton a:visited {
+    color: rgb(255, 255, 255);
     text-decoration: none;
 }
 
