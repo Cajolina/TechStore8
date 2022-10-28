@@ -91,6 +91,11 @@ main {
 
 }
 
+.product_container i {
+    padding-right: 1rem;
+    font-size: 1.45rem;
+ }
+
 .price p {
     font-size: 1.6rem;
     font-weight: 600;
@@ -105,11 +110,6 @@ button {
     font-size: 1.6rem;
     font-weight: 400;
     border-radius: 12px;
-}
-
-.product_container i {
-   padding-right: 1rem;
-   font-size: 1.45rem;
 }
 
     
@@ -162,5 +162,50 @@ footer button {
 
 .receipt button {
     margin: 2rem;
+}
+
+
+@media (max-width: 400px)
+{
+    header h1 {
+        font-size: 1.7rem;
+    }
+
+    .rightContent {
+        font-size: 1.7rem;
+    }
+
+    .product_container img {
+        height: 25rem;
+    }
+    .product_container h2 {
+        padding-top: 5rem;
+        font-size: 2.4rem;
+    }
+    
+    .product_container p {
+        font-size: 0.5rem;
+    }
+    
+    button {
+        background-color: #6397ED;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1.0rem;
+        font-weight: 400;
+        border-radius: 12px;
+    }
+
+    .product_container i {
+        padding-right: 1rem;
+        font-size: 1rem;
+     }
+    
+    .price p {
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: -0.06rem;
+    }
 }
 

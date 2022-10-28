@@ -1,4 +1,8 @@
-//var listOfProducts;
+const cartTitle = document.createElement("h2")
+cartTitle.innerHTML = "Kundvagn";
+//const icon = document.createElement("i")
+//icon.classList.add("fa-solid fa-cart-shopping")
+
 const productContainer = document.createElement("div");
 const mainCart = document.querySelector("main");
 const cartNr = document.querySelector(".shoppingCount");
@@ -7,10 +11,11 @@ const totalPrice = document.createElement("h3");
 const buy = document.createElement("button");
 buy.classList.add("buybutton")
 buy.innerHTML = `<div class="checkout"><a href="./receipt.html"><p>Slutför ditt köp</p></a></div>`;
-
+productContainer.appendChild(cartTitle)
 mainCart.appendChild(productContainer);
 mainCart.appendChild(totalPrice);
 mainCart.appendChild(buy);
+//cartTitle.appendChild(icon)
 
 
 initSite()
@@ -77,7 +82,7 @@ function removeButton (hej) {
    
    addProductsToWebpage();
    getStorage();
-   purchaseButton();
+   showPurchaseBtn();
    printPrice();
 }
 
@@ -89,11 +94,13 @@ function printPrice() {
       }, 0);
 
       totalPrice.innerText = "Totalt pris: " + totalSum + " kr";
+      // localStorage.setItem("totalsum", (totalSum));
+      return totalSum
 }
 
-function purchaseButton(){
-   const hoppla = JSON.parse(localStorage.getItem("shoppingcart"));
-   const nrOfItems = hoppla.length;
+function showPurchaseBtn(){
+   const shoppingCart = JSON.parse(localStorage.getItem("shoppingcart"));
+   const nrOfItems = shoppingCart.length;
    if (nrOfItems > 0) { 
       buy.style.display = "block";
    } else {
@@ -104,7 +111,54 @@ function purchaseButton(){
 buy.addEventListener("click", buyBtn);
 
 function buyBtn() {
-   const yihashoppingcart = JSON.parse(localStorage.getItem("shoppingcart"));
+   const shoppingCart = JSON.parse(localStorage.getItem("shoppingcart"));
+   const loggedInUser = localStorage.getItem("userloggedin");
+   // const totalSum = localStorage.getItem("totalsum");
+   const boughtProducts = {
+      products: shoppingCart,
+      total: printPrice(),
+      user: loggedInUser
+   }
+   if(!localStorage.getItem("orders")) {
+      localStorage.setItem("orders", JSON.stringify([boughtProducts]));
+   }  else {
+      const orders = JSON.parse(localStorage.getItem("orders"));
+      orders.push(boughtProducts);
+      localStorage.setItem("orders", JSON.stringify(orders));
+   }
+
+   localStorage.removeItem("shoppingcart");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*const yihashoppingcart = JSON.parse(localStorage.getItem("shoppingcart"));
 
    if(localStorage.getItem("ordersLS")) {
       const orders = JSON.parse(localStorage.getItem("ordersLS"));
@@ -128,12 +182,10 @@ function buyBtn() {
       const tva = JSON.parse(localStorage.getItem(userNloggedin));
       tva.push(yihashoppingcart)
       localStorage.setItem(userNloggedin, JSON.stringify(tva))
-   }*/
+   }
    
 
-   localStorage.removeItem("shoppingcart");
-}
-   
+   localStorage.removeItem("shoppingcart");*/   
    /*
 for (let x of users) {
       if(user.value === x.userName && word.value === x.passWord) {
