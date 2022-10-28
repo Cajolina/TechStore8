@@ -1,7 +1,15 @@
 const cartTitle = document.createElement("h2")
 cartTitle.innerHTML = "Kundvagn";
-//const icon = document.createElement("i")
-//icon.classList.add("fa-solid fa-cart-shopping")
+cartTitle.classList.add("titelincart")
+console.log(cartTitle)
+const icon = document.createElement("i")
+icon.setAttribute("class", "fa-solid fa-cart-shopping")
+
+
+const checkIcon = document.createElement("i")
+checkIcon.setAttribute("class", "fa-solid fa-check");
+
+
 
 const productContainer = document.createElement("div");
 const mainCart = document.querySelector("main");
@@ -10,18 +18,21 @@ productContainer.className = "productContainer";
 const totalPrice = document.createElement("h3");
 const buy = document.createElement("button");
 buy.classList.add("buybutton")
-buy.innerHTML = `<div class="checkout"><a href="./receipt.html"><p>Slutför ditt köp</p></a></div>`;
-productContainer.appendChild(cartTitle)
+buy.innerHTML = `<a href="./receipt.html"><p>Slutför ditt köp</p></a>`;
+
+
 mainCart.appendChild(productContainer);
+productContainer.appendChild(cartTitle)
 mainCart.appendChild(totalPrice);
 mainCart.appendChild(buy);
-//cartTitle.appendChild(icon)
+cartTitle.appendChild(icon)
+buy.insertAdjacentElement("afterBegin", checkIcon);
 
 
 initSite()
 
 function initSite() {
-   getStorage();
+   getNumberOfItems();
    addProductsToWebpage();
    printPrice();
 }
@@ -42,46 +53,49 @@ const title = document.createElement("h2")
 title.innerText = productCart.title
 const price = document.createElement("p")
 price.innerText = productCart.price
+
 const removeBtn = document.createElement("button")
 removeBtn.innerText = "Ta bort"
 removeBtn.classList.add("remove-btn");
 
 
-//const removeIcon = document.createElement("i")
-//removeIcon.innerText = 
+const removeIcon = document.createElement("i")
+removeIcon.setAttribute("class", "fa-solid fa-trash-can");
 
+removeBtn.insertAdjacentElement("afterBegin", removeIcon);
 
-productDiv.appendChild(imageCart)
-productDiv.appendChild(title)
-productDiv.appendChild(price)
-productDiv.appendChild(removeBtn)
-productContainer.appendChild(productDiv)
-//removeBtn.appendChild(removeIcon)
+productDiv.appendChild(imageCart);
+productDiv.appendChild(title);
+productDiv.appendChild(price);
+productDiv.appendChild(removeBtn);
+productContainer.appendChild(productDiv);
+
 
 removeBtn.addEventListener("click", () => {
-   removeButton(productCart);
+   removeProduct(productCart);
 });
 }
 }
 
-function getStorage() {
-   const horse = JSON.parse(localStorage.getItem("shoppingcart"));
+function getNumberOfItems() {
+   const shoppingCartArray = JSON.parse(localStorage.getItem("shoppingcart"));
    if (localStorage.getItem("shoppingcart")) {
-   const numberOfItems = horse.length;
+   const numberOfItems = shoppingCartArray.length;
    cartNr.innerText = numberOfItems;
    }
 }
 
-function removeButton (hej) {
-   const ponny = JSON.parse(localStorage.getItem("shoppingcart"));
-   const index = ponny.findIndex(product=> product.title === hej.title)
-   ponny.splice(index, 1);
-   localStorage.setItem("shoppingcart", JSON.stringify(ponny));
+function removeProduct (item) {
+   const shoppingcartArray = JSON.parse(localStorage.getItem("shoppingcart"));
+   const index = shoppingcartArray.findIndex(product=> product.title === item.title)
+   shoppingcartArray.splice(index, 1);
+   localStorage.setItem("shoppingcart", JSON.stringify(shoppingcartArray));
+   console.log(item)
   
    
    
    addProductsToWebpage();
-   getStorage();
+   getNumberOfItems();
    showPurchaseBtn();
    printPrice();
 }

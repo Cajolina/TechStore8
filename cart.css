@@ -114,7 +114,9 @@ button {
 
 .buybutton {
     background-color: #6397ED;
-    padding: 1rem 3rem;
+    padding: 1rem 2rem;
+    display: flex;
+
 }
 /*.checkout {
    
@@ -123,6 +125,7 @@ button {
 }*/
 .buybutton a {
     text-decoration: none;
+    padding-left: 1.5rem;
 }
 
 .buybutton a:visited {
