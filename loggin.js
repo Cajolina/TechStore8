@@ -16,7 +16,7 @@ const newuserpassword = document.querySelector(".newuserpassword");
 const createBtn = document.querySelector(".createBtn");
 const shopBtn = document.querySelector(".shoplink p")
 
-
+let orderhistory;
 // Här kommer min information som skall hämtas och är sparad i lådor. Variabler.
 
 let users = [
@@ -53,11 +53,10 @@ function control(e) {
     users = JSON.parse(localStorage.getItem("storage"))
     for (let x of users) {
     if(user.value === x.userName && word.value === x.passWord) {
-        
+    
         localStorage.setItem("userloggedin", x.userName);
-
         printOrderHistory();
-
+    
     return
     } 
 }
@@ -66,6 +65,12 @@ wronguser();
 }
 
 // Här är en funktion med vad som ska hända om användarnamnet är godkänt.
+
+if(!orderhistory){
+console.log("hejsan");
+}
+
+
 
 function printOrderHistory() {
     const userloggedin = localStorage.getItem("userloggedin")
@@ -78,9 +83,9 @@ function printOrderHistory() {
 
 
     // Gör också en if - om INTE order finns. 
-    const username = localStorage.getItem("userloggedin");
     const orderList = JSON.parse(localStorage.getItem("orders"));
-    const orderhistory = orderList.filter((order) => order.user === username)
+    orderhistory = orderList.filter((order) => order.user === userloggedin)
+    
 
     for (const orders of orderhistory) {
     for (const product of orders.products) {
