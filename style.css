@@ -142,7 +142,7 @@ footer button {
 }
 
 
-.receipt {
+.purchaseMessage {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -151,16 +151,16 @@ footer button {
     color: #363636;
 }
 
-.receipt h2 {
+.purchaseMessage h2 {
     font-size: 5rem;
 }
 
-.receipt p {
+.purchaseMessage p {
     padding-top: 2rem;
     font-size: 2rem;
 }
 
-.receipt button {
+.purchaseMessage button {
     margin: 2rem;
 }
 
