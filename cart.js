@@ -1,10 +1,10 @@
 const cartTitle = document.createElement("h2")
 cartTitle.innerHTML = "Kundvagn";
-cartTitle.classList.add("titelincart")
-console.log(cartTitle)
+cartTitle.classList.add("titleincart")
 const icon = document.createElement("i")
 icon.setAttribute("class", "fa-solid fa-cart-shopping")
-
+cartTitle.appendChild(icon)
+cartTitle.insertAdjacentElement("afterBegin", icon);
 
 const checkIcon = document.createElement("i")
 checkIcon.setAttribute("class", "fa-solid fa-check");
@@ -18,14 +18,14 @@ productContainer.className = "productContainer";
 const totalPrice = document.createElement("h3");
 const buy = document.createElement("button");
 buy.classList.add("buybutton")
-buy.innerHTML = `<a href="./receipt.html"><p>Slutför ditt köp</p></a>`;
+buy.innerHTML = `<a href="./purchaseMessage.html"><p>Slutför ditt köp</p></a>`;
 
 
 mainCart.appendChild(productContainer);
-productContainer.appendChild(cartTitle)
+mainCart.insertAdjacentElement("afterBegin", cartTitle)
 mainCart.appendChild(totalPrice);
 mainCart.appendChild(buy);
-cartTitle.appendChild(icon)
+
 buy.insertAdjacentElement("afterBegin", checkIcon);
 
 

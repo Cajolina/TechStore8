@@ -60,6 +60,16 @@ main {
 
 }
 
+.titleincart {
+    margin-top: 8rem;
+    font-size: 3rem;
+}
+
+.titleincart i {
+    padding-right: 1rem;
+    font-size: 2.6rem;
+}
+
 .productContainer {
     display: flex;
     padding: 5rem;
