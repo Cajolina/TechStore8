@@ -32,7 +32,7 @@ if (!localStorage.getItem("storage")) {
 
 // Här är mina kommandon för att säga åt webbläsare att något ska hända.
 
-function start() 
+/*function start() 
 {
     if(localStorage.getItem("userloggedin"))
     {
@@ -40,7 +40,7 @@ function start()
     }
 }
 
-start()
+start()*/
 
 loginBtn.addEventListener("click", control);
 logoutbutton.addEventListener("click", logout);
@@ -66,9 +66,9 @@ wronguser();
 
 // Här är en funktion med vad som ska hända om användarnamnet är godkänt.
 
-if(!orderhistory){
-console.log("hejsan");
-}
+//if(!orderhistory){
+//console.log("hejsan");
+//}
 
 
 
@@ -83,10 +83,15 @@ function printOrderHistory() {
 
 
     // Gör också en if - om INTE order finns. 
+    //if (localStorage.getItem("orders")) {
     const orderList = JSON.parse(localStorage.getItem("orders"));
     orderhistory = orderList.filter((order) => order.user === userloggedin)
-    
+     
 
+    if (orderhistory.length <= 0) {
+
+        headlinemain.innerText = "Välkommen " + userloggedin;
+    } else {
     for (const orders of orderhistory) {
     for (const product of orders.products) {
     const orderhistoryContainer = document.createElement("div");
@@ -103,10 +108,17 @@ function printOrderHistory() {
     main.appendChild(orderHistoryContainer);
     orderHistoryContainer.appendChild(price);
     }
-}  
+   
+}
+    } 
+
+     //console.log(orderhistory.user)
+   //} 
+//}  
 
 
-function addnew() {
+function addnew(e) {
+    e.preventDefault()
     const storage = JSON.parse(localStorage.getItem("storage"))
     let addnewuser = {
         userName: newusername.value
@@ -136,7 +148,8 @@ function wronguser() {
 
 // Här är logga ut sidan
 
-function logout() {
+function logout(e) {
+    e.preventDefault();
     headlinemain.innerText = "Hej då.";
     paragraphmain.innerText = "Du har loggat ut.";
     moreusers.style.display = "block";

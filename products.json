@@ -1,52 +1,52 @@
 [
     {
         "title": "iPhone X",
-        "description": "Last years phone from Apple with a beautiful all display front.",
+        "description": "Last years phone from Apple with a beautiful all display front",
         "image": "iPhoneX.png",
         "price": 11495
     },{
         "title": "One Plus 5",
-        "description": "Sleek and powerful smartphone from One Plus.",
+        "description": "Sleek and powerful smartphone from One Plus",
         "image": "OnePlus5.png",
         "price": 4995
     },{
         "title": "Galaxy S8",
-        "description": "Really cool edge to edge smartphone from Samsung.",
+        "description": "Really cool edge to edge smartphone from Samsung",
         "image": "SamsungS8.png",
         "price": 7990
     },{
         "title": "LG V30",
-        "description": "Super nice and beautiful smartphone from LG.",
+        "description": "Super nice and beautiful smartphone from LG",
         "image": "LGV30.png",
         "price": 7495
     },{
         "title": "Iphone 14 Pro Gold",
-        "description": "Kraftfull A16 Bionic-processor.",
+        "description": "Kraftfull A16 Bionic-processor",
         "image": "iphone14pro.png",
         "price": 22190
     },{
         "title": "Google px 7 Pro",
-        "description": "Drivs av supersnabba och optimerade google tensor G2.",
+        "description": "Drivs av supersnabba och optimerade google tensor G2",
         "image": "googlepixel7pro.png",
         "price": 9990
     },{
         "title": "Nokia X30 white",
-        "description": "256GB internminne för bilder, appar och videos.",
+        "description": "256GB internminne för bilder, appar och videos",
         "image": "nokiax30.png",
         "price": 5690
     },{
         "title": "Samsung Galaxy S22",
-        "description": "Ramen i Armour aluminium skyddar telefonen från fall.",
+        "description": "Ramen i Armour aluminium skyddar telefonen från fall",
         "image": "samsungs22ultra.png",
         "price": 15990
     },{
         "title": "Xiaomi 12 Pro Blue",
-        "description": "Supersnabb 120Hz Hypercharge som ger din telefon 100% batteri på några minuter.",
+        "description": "Supersnabb 120Hz Hypercharge som ger din telefon 100% batteri på några minuter",
         "image": "xiaomi12pro.png",
         "price": 11490
     },{
         "title": "Motorola Edge 30",
-        "description": "200+50+12 Mpx trippelkamera.",
+        "description": "200+50+12 Mpx trippelkamera",
         "image": "motorolaedge30ultra.png",
         "price": 9990
     }
