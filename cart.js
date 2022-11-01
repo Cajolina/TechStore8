@@ -124,7 +124,7 @@ function showPurchaseBtn(){
    console.log(nrOfItems);  
 if (nrOfItems > 0) { 
    
-      buy.style.display = "block";
+      buy.style.display = "flex";
    }  
    else {
       buy.style.display = "none";
