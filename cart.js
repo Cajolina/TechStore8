@@ -120,16 +120,17 @@ function printPrice() {
 function showPurchaseBtn(){
    if (localStorage.getItem("shoppingcart")) {
    const shoppingCart = JSON.parse(localStorage.getItem("shoppingcart"));
-   const nrOfItems = shoppingCart.length;
-   console.log(nrOfItems);  
+   const nrOfItems = shoppingCart.length;  
 if (nrOfItems > 0) { 
-   
       buy.style.display = "block";
    }  
    else {
       buy.style.display = "none";
    }
-}
+  
+} else {
+      buy.style.display = "none";
+   }
 }
 
 
