@@ -90,7 +90,7 @@ main {
 
 .product_container p {
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     padding-bottom: 0.6rem;
 
 }
@@ -104,16 +104,18 @@ main {
     font-size: 1.5rem;
     font-weight: 600;
     letter-spacing: -0.06rem;
+    padding-bottom: 1.7rem;
 }
 
 button {
+    /*background-color: rgb(99, 145, 237);*/
     background-color: #6397ED;
     color: white;
     border: none;
-    padding: 8px 30px;
+    padding: 15px 30px;
     font-size: 1.6rem;
     font-weight: 400;
-    border-radius: 12px;
+    border-radius: 10px;
 }
 
     
@@ -193,7 +195,7 @@ footer button {
    
     
     button {
-        background-color: #6397ED;
+        background-color: #5d93ea;
         color: white;
         border: none;
         padding: 10px 16px;
