@@ -16,6 +16,7 @@ const mainCart = document.querySelector("main");
 const cartNr = document.querySelector(".shoppingCount");
 productContainer.className = "productContainer";
 const totalPrice = document.createElement("h3");
+totalPrice.classList.add("totalSumContainer")
 const buy = document.createElement("button");
 buy.classList.add("buybutton")
 buy.innerHTML = `<a href="./purchaseMessage.html"><p>Slutför ditt köp</p></a>`;
@@ -48,6 +49,7 @@ productContainer.innerHTML = "";
 
 for (const productCart of getProducts) {
 const productDiv = document.createElement("div")
+
 
 const imageCart = document.createElement("img")
 imageCart.setAttribute("src", "/assets/" + productCart.image)

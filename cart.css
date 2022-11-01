@@ -73,14 +73,11 @@ main {
 
 .productContainer {
     display: flex;
-    padding: 5rem;
+    padding: 5rem 5rem 1rem 5rem;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 
-   
-    /*justify-content: center;
-    align-items: center;*/
 }
 
 .productContainer div {
@@ -121,13 +118,12 @@ main {
 }
 
 button {
-    background-color: #dc4a4a;
+  
     color: white;
     border: none;
     padding: 16px 30px;
-    font-size: 1.4rem;
-    font-weight: 400;
-    border-radius: 12px;
+     font-weight: 400;
+    border-radius: 10px;
 }
 
 button {
@@ -144,7 +140,8 @@ button {
 }
 
 .remove-btn i {
-    font-size: 2rem;
+    font-size: 1rem;
+    
 }
 
 .buybutton {
@@ -158,13 +155,6 @@ button {
     font-weight: 400;
 }
 
-
-
-/*.checkout {
-   
-    padding: 1rem;
-    background-color: #6397ED;
-}*/
 .buybutton a {
     text-decoration: none;
     padding-left: 1.5rem;
@@ -180,4 +170,79 @@ button {
    font-size: 1.45rem;
 }
 
+.totalSumContainer {
+    padding-bottom: 2.7rem;
+}
+
+
+
+@media (max-width: 600px) {
+.rightContent {
+    font-size: 2rem;
+}
+
+    .productContainer {
+        display: flex;
+        padding: 3rem 3rem 1rem 3rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        
+    }
+  
+    .productContainer div {
+        
+        padding: 1rem;
+    
+    }
+
+    .productContainer img {
+       height: 9rem;
+    }
+    .productContainer h2 {
+        font-size: 1.5rem;
+    }
+    
+    .productContainer p {
+        padding-bottom: 1.8rem;
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: -0.06rem;
+    }
+    .price p {
+        padding-bottom: 4rem;
+        font-size: 1.6rem;
+        font-weight: 600;
+        letter-spacing: -0.06rem;
+    }
+    
+    button {
+        color: white;
+        border: none;
+        padding: 16px 30px;
+        font-weight: 400;
+        border-radius: 10px;
+    }
+    
+    button {
+        color: white;
+        border-radius: 10px;
+    }
+    
+    .remove-btn {
+        background-color: #dc4a4a;
+        /*border: none; behöver vi denna?*/ 
+        padding: 10px 20px;
+        font-size: 1.1rem;
+        font-weight: 400;
+    }
+    
+    .remove-btn i {
+        font-size: 1rem;
+        
+    }
+
+   
+
+}
 
