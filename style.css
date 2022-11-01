@@ -58,7 +58,7 @@ main {
     justify-content: center;
     align-items: center;
     position: relative;
-    top: 5rem;
+    top: 4rem;
 
 }
 
@@ -66,7 +66,7 @@ main {
     width: 100%;
     height: 100vh;
    /* margin: 8rem;  /*- ordna denna. ev lägga som en media med viss bredd*/
-    padding: 5rem;
+    padding: 0rem 1rem 1rem 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -79,19 +79,19 @@ main {
 
 .product_container img {
     justify-content: center;
-    height: 60%;
+    height: 55%;
 }
 .product_container h2 {
-    padding-top: 4.5rem;
-    padding-bottom: 1.0rem;
+    padding-top: 0rem;
+    padding-bottom: 0.7rem;
     font-weight: 600;
-    font-size: 3.4rem;
+    font-size: 3.1rem;
 }
 
 .product_container p {
-    font-weight: 800;
-    font-size: 1.0rem;
-    padding-bottom: 1.2rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding-bottom: 0.6rem;
 
 }
 
@@ -101,7 +101,7 @@ main {
  }
 
 .price p {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     font-weight: 600;
     letter-spacing: -0.06rem;
 }
@@ -110,7 +110,7 @@ button {
     background-color: #6397ED;
     color: white;
     border: none;
-    padding: 16px 30px;
+    padding: 8px 30px;
     font-size: 1.6rem;
     font-weight: 400;
     border-radius: 12px;

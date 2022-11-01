@@ -122,7 +122,8 @@ function showPurchaseBtn(){
    const shoppingCart = JSON.parse(localStorage.getItem("shoppingcart"));
    const nrOfItems = shoppingCart.length;  
 if (nrOfItems > 0) { 
-      buy.style.display = "block";
+   
+      buy.style.display = "flex";
    }  
    else {
       buy.style.display = "none";
