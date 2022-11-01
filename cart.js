@@ -54,7 +54,7 @@ imageCart.setAttribute("src", "/assets/" + productCart.image)
 const title = document.createElement("h2")
 title.innerText = productCart.title
 const price = document.createElement("p")
-price.innerText = productCart.price
+price.innerText = productCart.price + " kr";
 
 const removeBtn = document.createElement("button")
 removeBtn.innerText = "Ta bort"
@@ -62,7 +62,7 @@ removeBtn.classList.add("remove-btn");
 
 
 const removeIcon = document.createElement("i")
-removeIcon.setAttribute("class", "fa-solid fa-trash-can");
+removeIcon.setAttribute("class", "fa-regular fa-trash-can");
 
 removeBtn.insertAdjacentElement("afterBegin", removeIcon);
 
