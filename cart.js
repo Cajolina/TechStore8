@@ -35,6 +35,7 @@ function initSite() {
    getNumberOfItems();
    addProductsToWebpage();
    printPrice();
+   showPurchaseBtn();
    
 }
 
@@ -102,6 +103,7 @@ function removeProduct (item) {
 }
 
 function printPrice() {
+   if (localStorage.getItem("shoppingcart")) {
    const shoppingArray = JSON.parse(localStorage.getItem("shoppingcart"));
    const totalSum = shoppingArray.reduce(
       (total, item) => {
@@ -112,17 +114,24 @@ function printPrice() {
       // localStorage.setItem("totalsum", (totalSum));
       return totalSum
 }
+}
+
 
 function showPurchaseBtn(){
+   if (localStorage.getItem("shoppingcart")) {
    const shoppingCart = JSON.parse(localStorage.getItem("shoppingcart"));
    const nrOfItems = shoppingCart.length;
-   if (nrOfItems > 0) { 
+   console.log(nrOfItems);  
+if (nrOfItems > 0) { 
+   
       buy.style.display = "block";
-   } else {
+   }  
+   else {
       buy.style.display = "none";
    }
-   
 }
+}
+
 
 buy.addEventListener("click", buyBtn);
 
