@@ -32,7 +32,7 @@ if (!localStorage.getItem("storage")) {
 
 // Här är mina kommandon för att säga åt webbläsare att något ska hända.
 
-/*function start() 
+function start() 
 {
     if(localStorage.getItem("userloggedin"))
     {
@@ -40,7 +40,7 @@ if (!localStorage.getItem("storage")) {
     }
 }
 
-start()*/
+start()
 
 loginBtn.addEventListener("click", control);
 logoutbutton.addEventListener("click", logout);
@@ -73,42 +73,41 @@ wronguser();
 
 
 function printOrderHistory() {
+    const orderHistoryContainer = document.createElement("div");
+    orderHistoryContainer.classList.add("orderContainer");
     const userloggedin = localStorage.getItem("userloggedin")
+    headlinemain.innerText = "Välkommen " + userloggedin;
     form.style.display = "none";
     moreusers.style.display = "none";
-    headlinemain.innerText = userloggedin + " Orderhistorik";
     paragraphmain.style.display = "none";
     logoutbutton.style.display = "block";
     shopBtn.style.display = "block";
 
 
     // Gör också en if - om INTE order finns. 
-    //if (localStorage.getItem("orders")) {
+    if (localStorage.getItem("orders")) {
     const orderList = JSON.parse(localStorage.getItem("orders"));
     orderhistory = orderList.filter((order) => order.user === userloggedin)
      
 
     if (orderhistory.length <= 0) {
-
-        headlinemain.innerText = "Välkommen " + userloggedin;
+        orderHistoryContainer.innerHTML = "";
     } else {
+    headlinemain.innerText = userloggedin + " Orderhistorik";
     for (const orders of orderhistory) {
     for (const product of orders.products) {
-    const orderhistoryContainer = document.createElement("div");
     const titleOfProduct = document.createElement("h3");
     titleOfProduct.innerText = "Produkt: " + product.title;
-    main.appendChild(orderhistoryContainer);
-    orderhistoryContainer.appendChild(titleOfProduct);
+    main.appendChild(orderHistoryContainer);
+    orderHistoryContainer.appendChild(titleOfProduct);
     }
 
-    const orderHistoryContainer = document.createElement("div");
-    orderHistoryContainer.classList.add("orderContainer");
     const price = document.createElement("p");
     price.innerText = "Pris: " + orders.total;
     main.appendChild(orderHistoryContainer);
     orderHistoryContainer.appendChild(price);
     }
-   
+}
 }
     } 
 
@@ -161,6 +160,10 @@ function logout(e) {
     newusername.value = "";
     newuserpassword.value = "";
     localStorage.removeItem("userloggedin");
+    const orderHistoryContainer = document.querySelector(".orderContainer");
+    if (orderHistoryContainer) {
+        orderHistoryContainer.remove();
+    }
 }
 
 // Här kommer kod för localstorage

@@ -20,6 +20,7 @@ header {
     display: flex;
     justify-content: space-between;
     font-family: Helvetica, sans-serif;  /* Kolla om vi kan hitta en mer matchie font */
+    z-index: 999;
 }
 
 header h1 {
@@ -56,6 +57,8 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    top: 5rem;
 
 }
 
@@ -76,7 +79,7 @@ main {
 
 .product_container img {
     justify-content: center;
-    height: 30rem;
+    height: 60%;
 }
 .product_container h2 {
     padding-top: 4.5rem;
@@ -176,9 +179,9 @@ footer button {
         padding: 4rem 3rem 5rem 3rem;
     }
 
-    .product_container img {
+    /*.product_container img {
         height: 20rem;
-    }
+    }*/
     .product_container h2 {
         padding-top: 0rem;
         font-size: 2.4rem;
