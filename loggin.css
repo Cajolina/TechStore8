@@ -21,6 +21,10 @@ header {
     justify-content: space-between;
     font-family: Helvetica, sans-serif;  /* Kolla om vi kan hitta en mer matchie font */
 }
+header h1 {
+    
+    font-size: 2.5rem;
+}
 
 header a:visited {
     color: white;
@@ -111,7 +115,7 @@ main h2 {
 
 
 button {
-    background-color: black;
+    background-color: #212121;
     color: white;
     border: none;
     padding: 16px 30px;
@@ -121,7 +125,7 @@ button {
 }
 
 .loginBtn {
-    background-color: black;
+    background-color: #212121;
     color: white;
     border: none;
     padding: 16px 30px;
@@ -146,34 +150,24 @@ button {
 }
 
 
+@media (max-width: 600px)
+{
+    .logotype {
+        font-size: 1rem;
+    }
 
+  .shopHereLink {
+    display: none;
+  }
 
+  .rightContent {
+    font-size: 2rem;
+  }
 
-/* FOOTER CSS 
-
-footer {
-    width: 100%;
-    height: 13rem;
-    background-color: black;
-    color:white;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-around;
-    font-family: Helvetica, sans-serif;
+.logout {
+    font-size: 1.2rem;
 }
 
-footer h3 {
-    padding: 0.5rem;
-}
 
-footer input {
-    padding: 0.2rem 1rem;
-    margin-top: 0.5rem;
+   
 }
-
-footer button {
-    padding: 0.2rem 1rem;
-    background-color: white;
-    margin-top: 0.5rem;
-}
-*/
