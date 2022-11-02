@@ -1,3 +1,5 @@
+/* Basic CSS */
+
 * {
     margin: 0;
     padding: 0;
@@ -9,7 +11,7 @@ body {
     font-family: Helvetica, sans-serif;
 }
 
-/*HEADER STUFF */
+/* HEADER */
 
 header {
     width: 100%;
@@ -19,10 +21,10 @@ header {
     position: fixed;
     display: flex;
     justify-content: space-between;
-    font-family: Helvetica, sans-serif;  /* Kolla om vi kan hitta en mer matchie font */
+    font-family: Helvetica, sans-serif;
 }
+
 header h1 {
-    
     font-size: 2.5rem;
 }
 
@@ -55,65 +57,65 @@ header a {
     color: #959595;
 }
 
-.rightContent {
+.headerIcons {
     display: flex;
     align-items: center;
     padding-right: 2rem;
     font-size: 2.5rem;
 }
 
-.rightContent p {
+.headerIcons p {
     padding-right: 1rem;
     padding-left: 1rem;
 }
 
-/* MAIN CSS */
+/* MAIN */
 
 main {
     height: 100vh;
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: rgb(246, 246, 246);
     padding-top: 8rem;
-    /*justify-content: center;
-    align-items: center;*/
-
 }
 
 main h2 {
     font-size: 3rem;
 }
 
+/* Inputfields for existing user.*/
 .loginContainer {
-    padding: 5rem;
+    padding: 3rem;
 }
 
 .loginContainer h3 {
     font-size: 3rem;
+    margin-bottom: 2rem;
 }
 
 .loginContainer input {
-    padding: 2rem 7rem;
-    margin-bottom: 3rem;
+    padding: 1.3rem 5rem;
+    margin-bottom: 1.5rem;
 }
 
+/* Inputfield to create a new user.*/
 .createContainer {
     padding: 5rem;
+    padding-top: 19rem;
 }
 
 .createContainer h3 {
     font-size: 3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 .createContainer input {
-    padding: 2rem 7rem;
-    margin-bottom: 3rem;
+    padding: 1.3rem 5rem;
+    margin-bottom: 1.5rem;
 }
 
-
+/* Basic CSS for buttons.*/
 button {
     background-color: #212121;
     color: white;
@@ -124,14 +126,10 @@ button {
     border-radius: 12px;
 }
 
-.loginBtn {
-    background-color: #212121;
-    color: white;
-    border: none;
-    padding: 16px 30px;
-    font-size: 1.6rem;
-    font-weight: 400;
-    border-radius: 12px;
+button:hover {
+    background-color: #2d2d2d;
+    transition: 0.2s;
+    cursor: pointer;
 }
 
 .logout {
@@ -143,31 +141,88 @@ button {
 
 .logout:hover{
     color: #959595;
+    background-color: #212121;
+    transition: none;
 }
 
+/* CSS for orderhistory.*/
 .orderContainer {
     padding-bottom: 2rem;
 }
 
-
-@media (max-width: 600px)
+/* Media-CSS to make page responsive.*/
+@media (max-width: 720px)
 {
-    .logotype {
-        font-size: 1rem;
+
+ /* HEADER*/
+        
+    header {
+            height: 4rem;
+        }
+        
+    .shoplink h1 {
+            padding-left: 1rem;
+            padding-right: 2rem;
+            font-size: 1.9rem;
+        }
+    
+    .headerIcons {
+            font-size: 1.6em;
+        }
+    
+    .headerIcons p {
+            padding-right: 0.4rem;
+            padding-left: 1.7rem;
+            font-size: 2rem;
+        }
+
+    .shopHereLink {
+        display: none;
     }
 
-  .shopHereLink {
-    display: none;
-  }
+    .logout {
+        font-size: 1.2rem;
+        padding-right: 1.7rem;
+        padding-top: 1.5rem;
+    }
 
-  .rightContent {
-    font-size: 2rem;
-  }
+    /* MAIN. */
 
-.logout {
-    font-size: 1.2rem;
-}
+    main h2 {
+        font-size: 2rem;
+    }
 
-
-   
+    .loginContainer {
+        padding: 0rem;
+    }
+    
+    .loginContainer h3 {
+        font-size: 1.7rem;
+        padding-bottom: 1rem;
+    }
+    
+    .loginContainer input {
+        padding: 0.5rem 3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .createContainer {
+        padding: 2rem;
+    }
+    
+    .createContainer h3 {
+        font-size: 1.7rem;
+        padding-bottom: 0rem;
+    }
+    
+    .createContainer input {
+        padding: 0.5rem 3rem;
+        margin-bottom: 1rem;
+    }
+    
+    button {
+        padding: 8px 10px;
+        font-size: 1rem;
+        margin-top: -1rem;
+    }
 }
