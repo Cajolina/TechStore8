@@ -1,3 +1,5 @@
+/* Basic CSS */
+
 * {
     margin: 0;
     padding: 0;
@@ -9,7 +11,7 @@ body {
     font-family: Helvetica, sans-serif;
 }
 
-/*HEADER STUFF */
+/* HEADER */
 
 header {
     width: 100%;
@@ -19,13 +21,11 @@ header {
     position: fixed;
     display: flex;
     justify-content: space-between;
-    font-family: Helvetica, sans-serif;  /* Kolla om vi kan hitta en mer matchie font */
+    font-family: Helvetica, sans-serif;
     z-index: 999;
 }
 
 header h1 {
-    padding-top: 1.25rem;
-    padding-left: 2rem;
     font-size: 2.5rem;
 }
 
@@ -37,14 +37,31 @@ header a {
     text-decoration: none;
 }
 
-.rightContent {
+.logo {
     display: flex;
-    padding-top: 1.25rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo h1 {
+    padding-left: 2rem;
+    padding-right: 4rem;
+    font-size: 2.5rem;
+}
+
+.logo p {
+    font-size: 1.6rem;
+    display: none;
+}
+
+.headerIcons {
+    display: flex;
+    align-items: center;
     padding-right: 2rem;
     font-size: 2.5rem;
 }
 
-.rightContent p {
+.headerIcons p {
     padding-right: 1rem;
     padding-left: 1rem;
 }
@@ -52,20 +69,14 @@ header a {
 /* MAIN CSS */
 
 main {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     position: relative;
     top: 4rem;
-
 }
 
+/* Wrap every contentbox seperately. */
 .product_container {
     width: 100%;
     height: 100vh;
-   /* margin: 8rem;  /*- ordna denna. ev lägga som en media med viss bredd*/
     padding: 0rem 1rem 1rem 1rem;
     display: flex;
     flex-direction: column;
@@ -77,10 +88,6 @@ main {
     background-color: rgb(246, 246, 246);
 }
 
-.product_container img {
-    justify-content: center;
-    height: 55%;
-}
 .product_container h2 {
     padding-top: 0rem;
     padding-bottom: 0.7rem;
@@ -92,7 +99,36 @@ main {
     font-weight: 700;
     font-size: 1.2rem;
     padding-bottom: 0.6rem;
+}
 
+.product_container img {
+    height: 55%;
+}
+
+ /* Price for each product. */
+ .price p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.06rem;
+    padding-bottom: 1.7rem;
+    padding-top: 1rem;
+}
+
+/* Add to cart-button.*/
+button {
+    background-color: #6397ED;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: #5988d4;
+    transition: 0.2s;
+    cursor: pointer;
 }
 
 .product_container i {
@@ -100,91 +136,59 @@ main {
     font-size: 1.45rem;
  }
 
-.price p {
-    font-size: 1.5rem;
-    font-weight: 600;
-    letter-spacing: -0.06rem;
-    padding-bottom: 1.7rem;
-}
+/* Media-settings to make page responsive. */
 
-button {
-    /*background-color: rgb(99, 145, 237);*/
-    background-color: #6397ED;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 1.6rem;
-    font-weight: 400;
-    border-radius: 10px;
-}
+    @media (max-width: 700px) {
 
-
-/*
-.purchaseMessage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 10rem;
-    color: #363636;
-}
-
-.purchaseMessage h2 {
-    font-size: 5rem;
-}
-
-.purchaseMessage p {
-    padding-top: 2rem;
-    font-size: 2rem;
-}
-
-.purchaseMessage button {
-    margin: 2rem;
-}*/
-
-
-@media (max-width: 480px)
-{
-    header h1 {
-        font-size: 1.7rem;
-    }
-
-    .product_container {
-        padding: 4rem 3rem 5rem 3rem;
-    }
-
-    /*.product_container img {
-        height: 20rem;
-    }*/
-    .product_container h2 {
-        padding-top: 0rem;
-        font-size: 2.4rem;
-    }
+        /* HEADER */
+        
+        header {
+            height: 4rem;
+        }
+        
+        .logo h1 {
+            padding-left: 1rem;
+            padding-right: 2rem;
+            font-size: 1.9rem;
+        }
     
-    .product_container p {
-        font-size: 0.65rem;
-    }
-   
+        .headerIcons {
+            font-size: 1.6em;
+        }
     
-    button {
-        background-color: #5d93ea;
-        color: white;
-        border: none;
-        padding: 10px 16px;
-        font-size: 1rem;
-        font-weight: 400;
-        border-radius: 7px;
-    }
+        .headerIcons p {
+            padding-right: 0.4rem;
+            padding-left: 1.7rem;
+            font-size: 2rem;
+        }
 
-    .product_container i {
-        padding-right: 0.5rem;
-        font-size: 0.8rem;
-     }
+        /* MAIN */
+
+        .product_container {
+            padding: 4rem 3rem 5rem 3rem;
+        }
+
+        .product_container h2 {
+            font-size: 2.4rem;
+        }
     
-    .price p {
-        font-size: 1rem;
-        font-weight: 600;
-        letter-spacing: -0.06rem;
-    }
+        .product_container p {
+            font-size: 0.65rem;
+        }
+
+        button {
+            padding: 10px 16px;
+            font-size: 1rem;
+            border-radius: 7px;
+        }
+
+        .product_container i {
+            padding-right: 0.5rem;
+            font-size: 0.8rem;
+        }
+    
+        .price p {
+            font-size: 1rem;
+        }
 }
 

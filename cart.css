@@ -1,3 +1,5 @@
+/* Basic CSS */
+
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +12,7 @@ body {
     font-family: Helvetica, sans-serif;
 }
 
-/*HEADER STUFF */
+/* HEADER */
 
 header {
     width: 100%;
@@ -20,12 +22,11 @@ header {
     position: fixed;
     display: flex;
     justify-content: space-between;
-    font-family: Helvetica, sans-serif;  /* Kolla om vi kan hitta en mer matchie font */
+    font-family: Helvetica, sans-serif;
+    z-index: 999;
 }
 
 header h1 {
-    padding-top: 1.25rem;
-    padding-left: 2rem;
     font-size: 2.5rem;
 }
 
@@ -37,14 +38,26 @@ header a {
     text-decoration: none;
 }
 
-.rightContent {
+.logo {
     display: flex;
-    padding-top: 1.25rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo h1 {
+    padding-left: 2rem;
+    padding-right: 4rem;
+    font-size: 2.5rem;
+}
+
+.headerIcons {
+    display: flex;
+    align-items: center;
     padding-right: 2rem;
     font-size: 2.5rem;
 }
 
-.rightContent p {
+.headerIcons p {
     padding-right: 1rem;
     padding-left: 1rem;
 }
@@ -53,31 +66,28 @@ header a {
 
 main {
     max-height: 100vh;
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
-.titleincart {
+.mainHeadline {
     margin-top: 8rem;
-    margin-bottom: -3rem;
     font-size: 3rem;
 }
 
-.titleincart i {
+.mainHeadline i {
     padding-right: 1rem;
     font-size: 2.5rem;
 }
 
+/* Wrap all productdivs. */
 .productContainer {
     display: flex;
-    padding: 5rem 5rem 1rem 5rem;
+    padding: 2rem 5rem 1rem 5rem;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-
 }
 
 .productContainer div {
@@ -110,49 +120,48 @@ main {
     font-weight: 600;
     letter-spacing: -0.06rem;
 }
-.price p {
-    padding-bottom: 4rem;
-    font-size: 1.6rem;
-    font-weight: 600;
-    letter-spacing: -0.06rem;
-}
 
+/* Basic styling for all buttons. */
 button {
-  
     color: white;
     border: none;
-    padding: 16px 30px;
-     font-weight: 400;
+    font-weight: 400;
     border-radius: 10px;
 }
 
-button {
-    color: white;
-    border-radius: 10px;
-}
-
+/* Remove item-button */
 .remove-btn {
     background-color: #dc4a4a;
-    /*border: none; behöver vi denna?*/ 
-    padding: 16px 30px;
+    padding: 12px 26px;
     font-size: 1.4rem;
-    font-weight: 400;
 }
 
-.remove-btn i {
-    font-size: 1rem;
-    
+.productContainer i {
+    padding-right: 1rem;
+    font-size: 1.45rem;
+ }
+
+.remove-btn:hover {
+    background-color: #ba3e3e;
+    transition: 0.2s;
+    cursor: pointer;
 }
 
+/* Total sum for all products.*/
+.totalSumContainer {
+    padding-bottom: 2.7rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Go through with purchase-button. */
 .buybutton {
     background-color: #6397ED;
-    padding: 1rem 2rem;
     display: flex;
     justify-content: center;
-    border: none;
     padding: 16px 30px;
+    border: none;
     font-size: 1.4rem;
-    font-weight: 400;
 }
 
 .buybutton a {
@@ -162,87 +171,65 @@ button {
 
 .buybutton a:visited {
     color: rgb(255, 255, 255);
-    text-decoration: none;
 }
 
-.productContainer i {
-   padding-right: 1rem;
-   font-size: 1.45rem;
+.buybutton:hover {
+    background-color: #5988d4;
+    transition: 0.2s;
+    cursor: pointer;
 }
 
-.totalSumContainer {
-    padding-bottom: 2.7rem;
-}
+/* CSS to make page responsive. */
+@media (max-width: 700px) {
 
+    /* HEADER*/
+    
+    header {
+        height: 4rem;
+    }
+    
+    .logo h1 {
+        padding-left: 1rem;
+        padding-right: 2rem;
+        font-size: 1.9rem;
+    }
 
+    .headerIcons {
+        font-size: 1.6em;
+    }
 
-@media (max-width: 600px) {
-.rightContent {
-    font-size: 2rem;
-}
+    .headerIcons p {
+        padding-right: 0.4rem;
+        padding-left: 1.7rem;
+        font-size: 2rem;
+    }
+
+    /* MAIN */
 
     .productContainer {
-        display: flex;
-        padding: 3rem 3rem 1rem 3rem;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        
-    }
-  
-    .productContainer div {
-        
-        padding: 1rem;
-    
+        padding: 3rem 3rem 1rem 3rem;   
     }
 
     .productContainer img {
        height: 9rem;
     }
+
     .productContainer h2 {
         font-size: 1.5rem;
     }
     
     .productContainer p {
-        padding-bottom: 1.8rem;
         font-size: 1rem;
-        font-weight: 600;
-        letter-spacing: -0.06rem;
-    }
-    .price p {
-        padding-bottom: 4rem;
-        font-size: 1.6rem;
-        font-weight: 600;
-        letter-spacing: -0.06rem;
-    }
-    
-    button {
-        color: white;
-        border: none;
-        padding: 16px 30px;
-        font-weight: 400;
-        border-radius: 10px;
-    }
-    
-    button {
-        color: white;
-        border-radius: 10px;
-    }
-    
-    .remove-btn {
-        background-color: #dc4a4a;
-        /*border: none; behöver vi denna?*/ 
-        padding: 10px 20px;
-        font-size: 1.1rem;
-        font-weight: 400;
-    }
-    
-    .remove-btn i {
-        font-size: 1rem;
-        
     }
 
-   
+    .price p {
+        padding-bottom: 1rem;
+    }
+
+    .remove-btn {
+        padding: 10px 20px;
+        font-size: 1.1rem;
+    }
 
 }
 

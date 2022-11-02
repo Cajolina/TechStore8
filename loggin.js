@@ -1,5 +1,3 @@
-// Här är struktur på alla uppgifter jag vill hämta från HTML
-
 const form = document.querySelector(".form");
 const username = document.querySelector(".loginContainer");
 const user = document.querySelector(".user");
@@ -17,7 +15,6 @@ const createBtn = document.querySelector(".createBtn");
 const shopBtn = document.querySelector(".shoplink p")
 
 let orderhistory;
-// Här kommer min information som skall hämtas och är sparad i lådor. Variabler.
 
 let users = [
     {
@@ -30,9 +27,7 @@ if (!localStorage.getItem("storage")) {
     localStorage.setItem("storage", JSON.stringify(users))
 }
 
-// Här är mina kommandon för att säga åt webbläsare att något ska hända.
-
-function start() 
+function initSite() 
 {
     if(localStorage.getItem("userloggedin"))
     {
@@ -40,15 +35,13 @@ function start()
     }
 }
 
-start()
+initSite()
 
-loginBtn.addEventListener("click", control);
+loginBtn.addEventListener("click", controlUser);
 logoutbutton.addEventListener("click", logout);
-createBtn.addEventListener("click", addnew);
+createBtn.addEventListener("click", addNewUser);
 
-// Här skapas min kontroll av lösen/användarnamn. Det görs genom en funktion, samt if/else.
-
-function control(e) {
+function controlUser(e) {
     e.preventDefault()
     users = JSON.parse(localStorage.getItem("storage"))
     for (let x of users) {
@@ -57,20 +50,12 @@ function control(e) {
         localStorage.setItem("userloggedin", x.userName);
         printOrderHistory();
     
-    return
+        return
     } 
-}
+    }
 
 wronguser();
 }
-
-// Här är en funktion med vad som ska hända om användarnamnet är godkänt.
-
-//if(!orderhistory){
-//console.log("hejsan");
-//}
-
-
 
 function printOrderHistory() {
     const orderHistoryContainer = document.createElement("div");
@@ -83,40 +68,31 @@ function printOrderHistory() {
     logoutbutton.style.display = "block";
     shopBtn.style.display = "block";
 
-
-    // Gör också en if - om INTE order finns. 
     if (localStorage.getItem("orders")) {
-    const orderList = JSON.parse(localStorage.getItem("orders"));
-    orderhistory = orderList.filter((order) => order.user === userloggedin)
+        const orderList = JSON.parse(localStorage.getItem("orders"));
+        orderhistory = orderList.filter((order) => order.user === userloggedin)
      
-
     if (orderhistory.length <= 0) {
         orderHistoryContainer.innerHTML = "";
     } else {
-    headlinemain.innerText = userloggedin + " Orderhistorik";
+        headlinemain.innerText = userloggedin + " Orderhistorik";
     for (const orders of orderhistory) {
-    for (const product of orders.products) {
-    const titleOfProduct = document.createElement("h3");
-    titleOfProduct.innerText = "Produkt: " + product.title;
-    main.appendChild(orderHistoryContainer);
-    orderHistoryContainer.appendChild(titleOfProduct);
+        for (const product of orders.products) {
+            const titleOfProduct = document.createElement("p");
+            titleOfProduct.innerText = "Produkt: " + product.title;
+            main.appendChild(orderHistoryContainer);
+            orderHistoryContainer.appendChild(titleOfProduct);
+        }
+        const price = document.createElement("h3");
+        price.innerText = "Pris: " + orders.total;
+        main.appendChild(orderHistoryContainer);
+        orderHistoryContainer.appendChild(price);
     }
-
-    const price = document.createElement("p");
-    price.innerText = "Pris: " + orders.total;
-    main.appendChild(orderHistoryContainer);
-    orderHistoryContainer.appendChild(price);
     }
-}
-}
-    } 
+    }
+} 
 
-     //console.log(orderhistory.user)
-   //} 
-//}  
-
-
-function addnew(e) {
+function addNewUser(e) {
     e.preventDefault()
     const storage = JSON.parse(localStorage.getItem("storage"))
     let addnewuser = {
@@ -124,7 +100,6 @@ function addnew(e) {
         ,
         passWord: newuserpassword.value
     }
-
     storage.push(addnewuser)
 
     moreusers.style.display = "none";
@@ -137,15 +112,11 @@ function addnew(e) {
     printOrderHistory();
 }
 
-// Här är en funktion med vad som ska hända om användarnamnet är fel.
-
 function wronguser() {
     paragraphmain.style.display = "block";
     headlinemain.innerText = "Försök igen.";
     paragraphmain.innerText = "Du har skrivit fel lösenord eller användarnamn.";
 }
-
-// Här är logga ut sidan
 
 function logout(e) {
     e.preventDefault();
@@ -165,5 +136,3 @@ function logout(e) {
         orderHistoryContainer.remove();
     }
 }
-
-// Här kommer kod för localstorage
