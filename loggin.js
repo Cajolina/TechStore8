@@ -1,3 +1,4 @@
+const cartNr = document.querySelector(".shoppingCount");
 const form = document.querySelector(".form");
 const username = document.querySelector(".loginContainer");
 const user = document.querySelector(".user");
@@ -27,15 +28,23 @@ if (!localStorage.getItem("storage")) {
     localStorage.setItem("storage", JSON.stringify(users))
 }
 
-function initSite() 
-{
+function initSite() {
     if(localStorage.getItem("userloggedin"))
     {
-        printOrderHistory()
+        printOrderHistory();
     }
+    getNumberOfItems();
 }
 
 initSite()
+
+function getNumberOfItems() {
+    const shoppingCartArray = JSON.parse(localStorage.getItem("shoppingcart"));
+    if (localStorage.getItem("shoppingcart")) {
+       const numberOfItems = shoppingCartArray.length;
+       cartNr.innerText = numberOfItems;
+    }
+ }
 
 loginBtn.addEventListener("click", controlUser);
 logoutbutton.addEventListener("click", logout);
